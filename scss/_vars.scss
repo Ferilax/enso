@@ -1,0 +1,28 @@
+:root {
+	--red: #E94C45;
+	--dark: #372E2D;
+	--light: #FFFFF0;
+	--green: #51C073;
+	--purple: #AA95DB;
+	--yellow: #FFB449;
+
+	--z-header: 100;
+
+	--container-padding: 50px;
+
+	@media (width < 1440px) {
+		--container-padding: 40px;
+	}
+
+	@media (width < 1024px) {
+		--container-padding: 30px;
+	}
+
+	@media (width < 768px) {
+		--container-padding: 20px;
+	}
+
+	@media (width < 376px) {
+		--container-padding: 10px;
+	}
+}

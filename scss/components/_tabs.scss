@@ -1,0 +1,20 @@
+.tab-system {
+	button.tab-trigger {
+		@extend %button-outline;
+
+		&.active {
+			border: 1px solid var(--red);
+			background: var(--red);
+			color: white;
+		}
+	}
+
+	.tab-content {
+		height: 0;
+		overflow: hidden;
+
+		&.active {
+			height: unset;
+		}
+	}
+}

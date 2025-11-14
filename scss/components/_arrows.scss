@@ -1,0 +1,34 @@
+.splide__arrow {
+	--size: 46px;
+	width: var(--size);
+	height: var(--size);
+	flex: 0 0 var(--size);
+	transition: 0.2s;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 50%;
+	background: #FEF7F01A;
+	backdrop-filter: blur(20px);
+
+	@media (width >=1024px) {
+		&:hover {
+			background: var(--red);
+		}
+	}
+
+	&.red {
+		background: var(--red);
+	}
+
+	&:disabled {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+
+	@media (width < 1024px) {
+		display: none;
+	}
+}

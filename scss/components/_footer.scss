@@ -1,0 +1,128 @@
+footer {
+	margin-top: 120px;
+	padding: 80px 0;
+
+	background: #161616;
+	border-radius: 80px 80px 0 0;
+
+	color: white;
+	font-family: Humanst;
+
+	.container {
+		display: flex;
+		gap: 60px;
+	}
+
+	.left {
+		flex: 0 1 631px;
+	}
+
+	.right {
+		flex: 0 1 950px;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	.right-bottom {
+		margin-top: auto;
+
+		display: flex;
+	}
+
+	.lists {
+		display: flex;
+		justify-content: space-between;
+
+		@include responsive-font(12px, 24px);
+		line-height: 1.2;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.info {
+		margin-top: 130px;
+
+		opacity: 0.4;
+		@include responsive-font(12px, 20px);
+
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+
+	.form {
+		max-width: 532px;
+		margin-left: 145px;
+	}
+
+	.form-title {
+		@include responsive-font(16px, 24px);
+		line-height: 1.2;
+		font-family: Faberge;
+	}
+
+	.input-and-button {
+		margin-top: 30px;
+		display: flex;
+		gap: 28px;
+	}
+
+	.email {
+		@extend %input;
+	}
+
+	.subscribe {
+		@extend %button-primary;
+	}
+
+	.agreement {
+		margin-top: 40px;
+		display: flex;
+		align-items: start;
+		gap: 10px;
+
+		@include responsive-font(10px, 12px);
+		line-height: 1.2;
+		color: var(--light);
+	}
+
+	.decoration {
+		opacity: 0.1;
+
+		display: flex;
+		flex-direction: column;
+		gap: 13px;
+		align-items: center;
+		justify-content: end;
+
+		@include responsive-font(17px, 26px);
+		text-transform: uppercase;
+		font-family: Faberge;
+
+		img {
+			max-width: 158px;
+		}
+	}
+
+	.image-with-PP {
+		margin-left: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 60px;
+		align-items: end;
+
+		@include responsive-font(12px, 20px);
+		line-height: 1.2;
+	}
+
+	.PP {
+		opacity: 0.4;
+	}
+
+}

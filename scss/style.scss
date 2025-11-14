@@ -1,0 +1,25 @@
+@import "nullstyle";
+@import "vars";
+@import "fonts";
+
+@import "abstracts/mixins";
+@import "abstracts/templates";
+
+@import "components/header",
+"components/footer",
+"components/arrows",
+"components/checkbox",
+"components/tabs",
+"main";
+
+
+body {
+	font-family: Faberge;
+	background: var(--light);
+}
+
+.container {
+	max-width: 1740px; //1640px
+	padding: 0 var(--container-padding);
+	margin: 0 auto;
+}

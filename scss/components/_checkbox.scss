@@ -1,0 +1,25 @@
+.component_checkbox {
+	height: 16px;
+	width: 16px;
+	flex: 0 0 16px;
+
+	border-radius: 2px;
+	background: var(--light);
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:has(input:checked) {
+		background: url("../image/icons/check.svg") 50% no-repeat, var(--light);
+	}
+
+	input {
+		position: absolute;
+		z-index: -9999;
+		width: 0;
+		height: 0;
+		visibility: hidden;
+	}
+}
