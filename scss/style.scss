@@ -17,6 +17,12 @@ body {
 	scroll-behavior: smooth;
 	font-family: Faberge;
 	background: var(--light);
+
+	@media (width < 1024px) {
+		&.lock {
+			overflow: hidden;
+		}
+	}
 }
 
 .container {

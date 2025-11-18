@@ -9,15 +9,16 @@
 	};
 
 	const pyramidDesktop = document.querySelector(".pyramid.desktop");
+	const tapes = pyramidDesktop.querySelectorAll(".fake-tapes > .tape");
 	const pyramidDesktopAllScenes = document.querySelectorAll(".pyramid.desktop [data-scene]");
 	const pyramidDesktopSkip = document.querySelector(".pyramid.desktop .skip-animation");
 
-	const pyramidMobile = document.querySelector(".pyramid.mobile");
 	const html = document.querySelector("html");
 
+
 	function init(slideShowSection, allScenes, skipButton, SLIDE_SHOW_CONFIG) {
-		// Текущая активная сцена
 		let currentScene = 1;
+		// Текущая активная сцена
 		/*
 			Обновляет видимость сцены, добавляя соответствующий класс:
 			- "active" для текущей сцены
@@ -99,12 +100,15 @@
 
 		// Блокировка скролла
 		function lockScroll() {
+			pyramidDesktop.style.pointerEvents = "none";
 			isScrollLocked = true;
 			html.classList.add("slide-showed");
 		}
 
 		// Разблокировка скролла
 		function unlockScroll() {
+			pyramidDesktop.style.pointerEvents = "unset";
+			skipButton.style.display = "none";
 			isScrollLocked = false;
 			allScenesIsPlayed = true;
 			html.classList.remove("slide-showed");
@@ -164,6 +168,28 @@
 		pyramidDesktopSkip,
 		PYRAMID_CONFIG
 	);
+
+	// Переход по слайду по клику на ленту
+	tapes.forEach((tape) => {
+		tape.addEventListener("click", (e) => {
+			console.log(1)
+			if (tape.classList.contains("red-tape")) {
+				pyramidDesktop.dataset.currentScene = 3;
+			}
+			if (tape.classList.contains("purple-tape")) {
+				pyramidDesktop.dataset.currentScene = 4;
+			}
+			if (tape.classList.contains("green-tape")) {
+				pyramidDesktop.dataset.currentScene = 5;
+			}
+			if (tape.classList.contains("blue-tape")) {
+				pyramidDesktop.dataset.currentScene = 6;
+			}
+			if (tape.classList.contains("yellow-tape")) {
+				pyramidDesktop.dataset.currentScene = 7;
+			}
+		})
+	})
 
 }());
 

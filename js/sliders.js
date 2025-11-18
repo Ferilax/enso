@@ -151,18 +151,6 @@ import "./libs/splide.min.js"
 		arrows: false,
 		drag: false,
 	})
-	// Swiper-accordeon ------------------------------------------------------------------
-	const swiperAccordeons = document.querySelectorAll(".swiper_accordeon")
-	swiperAccordeons.forEach(swiper => {
-		swiper.addEventListener("click", (e) => {
-			const slides = swiper.querySelectorAll(".slide")
-			const clicked = e.target.closest(".slide");
-
-			if (!clicked) return;
-			slides.forEach(el => el.classList.remove("active"))
-			clicked.classList.add("active")
-		})
-	})
 
 	// scroll swiper
 	function scrollLockInit(splide, section) {
@@ -200,12 +188,14 @@ import "./libs/splide.min.js"
 
 		// Блокировка скролла
 		function lockScroll() {
+			sectionElement.style.pointerEvents = "none";
 			isScrollLocked = true;
 			html.classList.add("slide-showed");
 		}
 
 		// Разблокировка скролла
 		function unlockScroll() {
+			sectionElement.style.pointerEvents = "unset";
 			isScrollLocked = false;
 			allScenesIsPlayed = true;
 			html.classList.remove("slide-showed");
@@ -261,9 +251,32 @@ import "./libs/splide.min.js"
 			if (clickedSkip) {
 				clickedSkip.style.display = "none"
 			}
-
 		})
 	}
+
+	// Переход по слайду по клику на ленту
+	document.querySelector(".pyramid.mobile")
+		?.addEventListener("click", (e) => {
+			const clickedTape = e.target.closest(".tape");
+
+			if (!clickedTape) return
+
+			if (clickedTape.classList.contains("red")) {
+				pyramidSplide.go(1)
+			}
+			if (clickedTape.classList.contains("purple")) {
+				pyramidSplide.go(2)
+			}
+			if (clickedTape.classList.contains("green")) {
+				pyramidSplide.go(3)
+			}
+			if (clickedTape.classList.contains("blue")) {
+				pyramidSplide.go(4)
+			}
+			if (clickedTape.classList.contains("yellow")) {
+				pyramidSplide.go(5)
+			}
+		})
 
 	scrollLockInit(pyramidSplide, ".pyramid.mobile",)
 	scrollLockInit(preventiveSplide, ".preventive")

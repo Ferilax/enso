@@ -1124,7 +1124,9 @@
 
 // ----------------------------------------------------------------
 .image-banner {
-	margin-top: 140px;
+	max-width: 1920px;
+
+	margin: 140px auto 0;
 	padding: 0 24px;
 
 	display: flex;
@@ -1360,6 +1362,8 @@
 		font-family: Humanst;
 		font-size: 20px;
 		color: #372E2D80;
+
+		pointer-events: all;
 
 		&:hover {
 			text-decoration: underline;
@@ -1607,6 +1611,8 @@
 		height: 100%;
 
 		justify-content: center;
+
+		pointer-events: none;
 	}
 
 	.tape {
@@ -1631,6 +1637,8 @@
 		line-height: 1.2;
 		text-transform: uppercase;
 		color: white;
+
+		cursor: pointer;
 
 		* {
 			position: relative;
@@ -1866,6 +1874,8 @@
 	}
 
 	.close {
+		pointer-events: all;
+
 		position: absolute;
 		right: 30px;
 		top: 30px;
@@ -2214,6 +2224,8 @@
 	}
 
 	.skip-animation {
+		pointer-events: all;
+
 		font-family: Humanst;
 		color: #372E2D80;
 		line-height: 1.2;

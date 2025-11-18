@@ -15,6 +15,8 @@ async function loadModules() {
 	if (document.querySelector("#splide_dry-collection")) {
 		import("./dry-collection.js")
 	}
+
+	import("./header.js")
 }
 
 // Запускаем после загрузки DOM
