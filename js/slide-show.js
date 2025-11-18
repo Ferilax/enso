@@ -171,7 +171,7 @@
 
 	// Переход по слайду по клику на ленту
 	tapes.forEach((tape) => {
-		tape.addEventListener("click", (e) => {
+		tape.addEventListener("click", () => {
 			console.log(1)
 			if (tape.classList.contains("red-tape")) {
 				pyramidDesktop.dataset.currentScene = 3;
