@@ -11,6 +11,10 @@ async function loadModules() {
 	if (document.querySelector(".pyramid")) {
 		import("./slide-show.js")
 	}
+
+	if (document.querySelector("#splide_dry-collection")) {
+		import("./dry-collection.js")
+	}
 }
 
 // Запускаем после загрузки DOM

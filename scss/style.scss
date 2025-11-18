@@ -14,6 +14,7 @@
 
 
 body {
+	scroll-behavior: smooth;
 	font-family: Faberge;
 	background: var(--light);
 }
@@ -22,4 +23,26 @@ body {
 	max-width: 1740px; //1640px
 	padding: 0 var(--container-padding);
 	margin: 0 auto;
+}
+
+html {
+	@media (max-width: 1200px) {
+		&.lock {
+			touch-action: none;
+			overflow: hidden;
+
+			body {
+				overflow: hidden;
+			}
+		}
+	}
+
+	&.slide-showed {
+		touch-action: none;
+		overflow: hidden;
+
+		body {
+			overflow: hidden;
+		}
+	}
 }
