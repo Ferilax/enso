@@ -31,6 +31,12 @@
 		display: flex;
 		align-items: center;
 		gap: 10px;
+
+		position: relative;
+	}
+
+	.burger-container {
+		position: relative;
 	}
 
 	.burger {
@@ -40,8 +46,6 @@
 		gap: 3px;
 		background: white;
 		border-radius: 50%;
-
-		display: none;
 
 		transition: 0.3s;
 
@@ -142,20 +146,22 @@
 }
 
 .head-menu {
-	position: fixed;
+	position: absolute;
 	z-index: var(--z-mobile-header);
-	top: 84px;
-	right: var(--container-padding);
+	top: calc(100% + 12px);
 
 	width: 250px;
 
-	transform: translateX(130%);
 	transition: 0.3s;
 
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-10px);
+
 	&.opened {
-		@media (width < 1024px) {
-			transform: none;
-		}
+		transform: none;
+		opacity: 1;
+		visibility: visible;
 	}
 
 	.list {
@@ -171,7 +177,12 @@
 		font-family: Humanst;
 	}
 
+	@media (width < 1024px) {
+		left: unset;
+		right: 0;
+	}
+
 	@media (width < 768px) {
-		top: 56px;
+		top: calc(100% + 10px);
 	}
 }

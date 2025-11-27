@@ -65,8 +65,25 @@
 
 // -----------------------------------------------------
 %h1 {
-	@include responsive-font(50px, 120px);
+	font-size: 120px;
+
 	text-transform: uppercase;
+
+	@media (width < 1440px) {
+		font-size: 100px;
+	}
+
+	@media (width < 1024px) {
+		font-size: 80px;
+	}
+
+	@media (width < 768px) {
+		font-size: 53px;
+	}
+
+	@media (width < 425px) {
+		font-size: 50px;
+	}
 }
 
 %h2 {

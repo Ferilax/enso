@@ -30,5 +30,12 @@
 
 	@media (width < 1024px) {
 		display: none;
+
+		--size: 34px;
+
+		img,
+		svg {
+			width: 14px;
+		}
 	}
 }

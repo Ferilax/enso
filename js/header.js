@@ -6,6 +6,5 @@
 	burger.addEventListener("click", () => {
 		burger.classList.toggle("opened");
 		headMenu.classList.toggle("opened");
-		document.body.classList.toggle("lock");
 	})
 }())

@@ -66,6 +66,10 @@ footer {
 		line-height: 1.2;
 		font-family: Faberge;
 		text-transform: uppercase;
+
+		br {
+			display: none;
+		}
 	}
 
 	.input-and-button {
@@ -126,9 +130,17 @@ footer {
 
 	.PP {
 		opacity: 0.4;
+
+		&.mobile {
+			display: none;
+		}
 	}
 
 	.mobile {
+		display: none;
+	}
+
+	.copy {
 		display: none;
 	}
 
@@ -147,6 +159,8 @@ footer {
 
 		.right {
 			gap: 32px;
+			flex-direction: row;
+			justify-content: space-between;
 		}
 
 		.lists {
@@ -154,8 +168,36 @@ footer {
 			flex-direction: row-reverse;
 		}
 
+		.cut {
+			display: none;
+		}
+
 		.list {
 			flex: 1 1 50%;
+			gap: 24px;
+			column-gap: 32px;
+
+			&:nth-child(1) {
+				.list {
+					background: pink;
+				}
+			}
+		}
+
+		.group {
+			flex: 1 1 50%;
+			display: flex;
+			gap: 24px;
+
+			ul {
+				flex: 1 1 50%;
+			}
+		}
+
+		.copy {
+			display: flex;
+			flex-direction: column;
+			flex: unset;
 		}
 
 		.container {
@@ -175,11 +217,22 @@ footer {
 			align-items: center;
 			text-align: center;
 			gap: 32px;
+			margin: 0;
 		}
 
 		.info.mobile {
+			align-items: end;
 			margin: 0;
 			display: flex;
+		}
+
+		.image-with-PP.desktop {
+			display: none;
+		}
+
+		.PP.mobile {
+			display: block;
+			text-align: center;
 		}
 
 		.desktop {
@@ -193,12 +246,22 @@ footer {
 		.decoration.mobile {
 			display: flex;
 		}
+
+		.form-title {
+			br {
+				display: block;
+			}
+		}
 	}
 
 	@media (width < 1024px) {
 		margin-top: 60px;
 		padding: 50px 0;
 		border-radius: 30px 30px 0 0;
+
+		.agreement {
+			max-width: 336px;
+		}
 	}
 
 	@media (width < 768px) {
@@ -216,18 +279,17 @@ footer {
 
 			input {
 				height: 32px;
+				flex: 0 0 193px;
 			}
 		}
 
 		.container {
-			gap: 32px;
-		}
-
-		.list {
-			gap: 20px;
+			gap: 40px;
 		}
 
 		.decoration {
+			font-size: 17px;
+
 			img {
 				width: 100px;
 			}
@@ -235,6 +297,50 @@ footer {
 
 		.agreement {
 			margin-top: 16px;
+			font-size: 8px;
+		}
+
+		.info.mobile {
+			gap: 10px;
+			font-size: 12px;
+		}
+
+		.subscribe {
+			font-size: 12px;
+		}
+
+		.lists {
+			font-size: 12px;
+		}
+
+		.PP.mobile {
+			font-size: 12px;
+		}
+	}
+
+	@media (width < 640px) {
+		.group {
+			display: block;
+		}
+
+		.copy {
+			display: none;
+		}
+
+		.cut {
+			display: block;
+		}
+
+		.right {
+			flex-direction: column;
+		}
+
+		.container {
+			gap: 28px;
+		}
+
+		.info.mobile {
+			align-items: center;
 		}
 	}
 

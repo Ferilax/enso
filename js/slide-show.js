@@ -3,7 +3,7 @@
 	const PYRAMID_CONFIG = {
 		maxScenes: {
 			desktop: 7,  // Макс. сцен для десктопа (ширина >= 1440px)
-			mobile: 6,  // Макс. сцен для мобильных (ширина < 1440px)
+			mobile: 7,  // Макс. сцен для мобильных (ширина < 1440px)
 		},
 		breakpoint: 1440,
 	};
@@ -80,7 +80,7 @@
 			const rect = slideShowSection.getBoundingClientRect();
 			const blockCenter = rect.top + rect.height / 2;
 			const windowCenter = window.innerHeight / 2;
-			return Math.abs(blockCenter - windowCenter) < 50; // Допустимая погрешность (50px)
+			return Math.abs(blockCenter - windowCenter) < 200; // Допустимая погрешность (50px)
 		}
 
 		// Функция для плавной прокрутки к центру блока

@@ -68,17 +68,17 @@ import "./libs/splide.min.js"
 				perPage: 3,
 			},
 			1023: {
-				perPage: 2,
-				gap: 24,
+				omitEnd: true,
+				focus: 0,
+				gap: 10,
+				fixedWidth: 209,
 			},
 			629: {
-				perPage: 1,
 				gap: 10,
-				padding: "calc((100vw - 100%) / 2 + 40px)",
+				fixedWidth: 209,
 			},
 		}
 	})
-
 	createSwiper("#splide_collection-4", {
 		perPage: 4,
 		gap: 32,
@@ -89,13 +89,14 @@ import "./libs/splide.min.js"
 				perPage: 3,
 			},
 			1023: {
-				perPage: 2,
-				gap: 24,
+				omitEnd: true,
+				focus: 0,
+				gap: 10,
+				fixedWidth: 209,
 			},
 			629: {
-				perPage: 1,
 				gap: 10,
-				padding: "calc((100vw - 100%) / 2 + 40px)",
+				fixedWidth: 209,
 			},
 		}
 	})
@@ -122,22 +123,10 @@ import "./libs/splide.min.js"
 	})
 
 	createSwiper("#splide_dry-collection", {
-		perPage: 3,
 		arrows: false,
-		gap: 24,
+		gap: 10,
+		fixedWidth: 330,
 		padding: "var(--container-padding)",
-
-		breakpoints: {
-			1260: {
-				perPage: 2,
-			},
-			1023: {
-				gap: 10,
-			},
-			767: {
-				perPage: 1,
-			}
-		}
 	})
 
 	const pyramidSplide = createSwiper("#splide_pyramid", {
@@ -168,7 +157,7 @@ import "./libs/splide.min.js"
 			const rect = splideElement.getBoundingClientRect();
 			const blockCenter = rect.top + rect.height / 2;
 			const windowCenter = window.innerHeight / 2;
-			return Math.abs(blockCenter - windowCenter) < 50; // Допустимая погрешность (50px)
+			return Math.abs(blockCenter - windowCenter) < 200; // Допустимая погрешность (50px)
 		}
 
 		// Функция для плавной прокрутки к центру блока
@@ -218,7 +207,6 @@ import "./libs/splide.min.js"
 				splide.go(">")
 			}
 		}
-
 		// Запрещаем скролл колесом мыши/тачпадом при блокировке
 		document.addEventListener("scroll", () => {
 			if (!isScrollLocked && !allScenesIsPlayed && isCenterInView()) {
@@ -253,7 +241,6 @@ import "./libs/splide.min.js"
 			}
 		})
 	}
-
 	// Переход по слайду по клику на ленту
 	document.querySelector(".pyramid.mobile")
 		?.addEventListener("click", (e) => {
