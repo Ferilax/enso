@@ -8,13 +8,9 @@ async function loadModules() {
 		import("./tabs.js");
 	}
 
-	if (document.querySelector(".pyramid")) {
-		import("./slide-show.js")
-	}
+	import("./slide-show.js")
 
-	if (document.querySelector("#splide_dry-collection")) {
-		import("./dry-collection.js")
-	}
+	import("./dry-collection.js")
 
 	import("./header.js")
 }

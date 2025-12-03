@@ -122,7 +122,19 @@ import "./libs/splide.min.js"
 		}
 	})
 
-	createSwiper("#splide_dry-collection", {
+	createSwiper("#splide_dry-collection-cats", {
+		arrows: false,
+		gap: 10,
+		fixedWidth: 330,
+		padding: "var(--container-padding)",
+	})
+	createSwiper("#splide_dry-collection-dogs", {
+		arrows: false,
+		gap: 10,
+		fixedWidth: 330,
+		padding: "var(--container-padding)",
+	})
+	createSwiper("#splide_dry-collection-big-dogs", {
 		arrows: false,
 		gap: 10,
 		fixedWidth: 330,

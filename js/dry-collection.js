@@ -14,9 +14,8 @@
 		})
 	})
 
-	const slider = document.querySelector("#splide_dry-collection")
-
-	slider.addEventListener("click", function (e) {
+	const sliders = document.querySelector(".dry-collection-mobile")
+	sliders.addEventListener("click", function (e) {
 		const clickedStructureTrigger = e.target.closest(".show-structure")
 		const clickedSlide = e.target.closest(".splide__slide")
 		const clickedClose = e.target.closest(".structure-close")
