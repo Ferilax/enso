@@ -4089,6 +4089,11 @@
 
 	@media (width < 1140px) {
 		--slide-height: 600px;
+
+		.slide.active {
+			padding: 20px;
+			padding-top: 14px;
+		}
 	}
 
 	@media (width < 1120px) {
