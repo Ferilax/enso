@@ -1023,7 +1023,7 @@
 	}
 
 	@media (width < 768px) {
-		background: url("../image/food-bg-mini.webp") 50%/cover fixed no-repeat;
+		background: url("../image/food-bg-mini.webp") 50%/cover no-repeat;
 		margin: -24px 0;
 		height: 375px;
 	}
@@ -2881,7 +2881,7 @@
 		&::after {
 			content: "";
 			position: absolute;
-			left: 40px;
+			left: 32px;
 			z-index: -1;
 			top: 0;
 			height: 100%;
@@ -3293,6 +3293,7 @@
 	.image {
 		max-width: 1500px;
 		margin: auto auto 0;
+		width: 100%;
 
 		img {
 			width: 100%;
@@ -3322,7 +3323,8 @@
 		}
 	}
 
-	#splide_preventive {
+	.splide {
+		position: relative;
 		flex: 1 1 0;
 		margin-top: 46px;
 
@@ -3335,6 +3337,7 @@
 	}
 
 	.splide__slide {
+
 		&:nth-child(3) {
 			.point {
 				max-width: unset;
@@ -3385,6 +3388,7 @@
 	}
 
 	.splide__track {
+		overflow: visible;
 		height: 100%;
 	}
 
@@ -3393,6 +3397,7 @@
 	}
 
 	.dots {
+		pointer-events: none;
 		position: absolute;
 		left: 0;
 		top: 46px;
@@ -3403,13 +3408,15 @@
 	}
 
 	.mobile-image {
-		flex: 0 0 150px;
+		flex: 0 0 95px;
 		display: none;
 
-		img {
+		>svg {
 			width: 100%;
 		}
 	}
+
+
 
 	.flex {
 		display: flex;
@@ -3421,8 +3428,55 @@
 		display: none;
 	}
 
+	.circle.active {
+		path {
+			stroke: #4CC9E9;
+		}
+
+		.fill {
+			stroke: transparent;
+			fill: #372E2D;
+		}
+
+		.border {
+			stroke: #372E2D;
+			fill: #FDF4EB;
+		}
+	}
+
+	.big {
+		.wave.active {
+			path {
+				fill: #4CC9E9;
+			}
+		}
+	}
+
+	.mid {
+		display: none;
+
+		.wave.active {
+			path {
+				stroke: #4CC9E9;
+			}
+		}
+	}
+
+	.small {
+		.wave.active {
+			path {
+				stroke: #4CC9E9;
+			}
+		}
+	}
+
 	@media (width < 1440px) {
 		padding: 80px 0;
+
+		.image {
+			margin-top: 40px;
+			padding: 0 60px;
+		}
 
 		.points {
 			margin-bottom: 0;
@@ -3462,10 +3516,22 @@
 				gap: 120px;
 			}
 		}
+
+		.mid {
+			display: block;
+		}
+
+		.big {
+			display: none;
+		}
 	}
 
 	@media (width < 1024px) {
 		padding: 60px 0;
+
+		.image {
+			padding: 0;
+		}
 
 		.title {
 			font-size: 16px;
@@ -3635,7 +3701,18 @@
 
 		.mobile-image {
 			display: block;
-			flex: 0 0 92px;
+		}
+
+		.splide {
+			min-width: 0;
+
+			.container {
+				padding-left: 0;
+			}
+		}
+
+		.schema-and-splide {
+			display: flex;
 		}
 
 		.point-head {

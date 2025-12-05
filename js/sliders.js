@@ -1,4 +1,5 @@
 import "./libs/splide.min.js"
+import { onSplideMove } from "./preventive.js";
 
 (function () {
 
@@ -152,6 +153,15 @@ import "./libs/splide.min.js"
 		arrows: false,
 		drag: false,
 	})
+	preventiveSplide.on("move", onSplideMove)
+
+	const preventive = document.querySelector(".preventive")
+	preventive.addEventListener("click", (e) => {
+		const circle = e.target.closest(".circle")
+		if (circle) {
+			preventiveSplide.go(parseInt(circle.dataset.goto))
+		}
+	})
 
 	// scroll swiper
 	function scrollLockInit(splide, section) {
@@ -275,6 +285,11 @@ import "./libs/splide.min.js"
 			if (clickedTape.classList.contains("yellow")) {
 				pyramidSplide.go(5)
 			}
+		})
+
+	document.querySelector(".preventive")
+		?.addEventListener("click", (e) => {
+
 		})
 
 	scrollLockInit(pyramidSplide, ".pyramid.mobile",)

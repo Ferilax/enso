@@ -26,6 +26,14 @@ body {
 	}
 }
 
+video {
+	&::-webkit-media-controls-fullscreen-button {
+		display: none;
+	}
+
+	pointer-events: none;
+}
+
 .container {
 	max-width: 1740px; //1640px
 	padding: 0 var(--container-padding);
