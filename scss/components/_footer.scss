@@ -126,6 +126,12 @@ footer {
 
 		@include responsive-font(12px, 20px);
 		line-height: 1.2;
+
+		max-width: 380px;
+
+		video {
+			width: 100%;
+		}
 	}
 
 	.PP {
@@ -207,7 +213,8 @@ footer {
 		.image-with-PP {
 			margin: 0;
 
-			img {
+			img,
+			video {
 				display: none;
 			}
 		}

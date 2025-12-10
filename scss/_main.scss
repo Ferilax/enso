@@ -622,6 +622,7 @@
 		flex: 0 1 50%;
 		padding-right: 70px;
 
+		img,
 		video {
 			max-width: 610px;
 			width: 100%;
@@ -1071,7 +1072,7 @@
 	position: relative;
 	z-index: 2;
 
-	background: #d9d0e9;
+	background: #d9d0eb;
 	color: var(--dark);
 	border-radius: 80px;
 	overflow: hidden;
