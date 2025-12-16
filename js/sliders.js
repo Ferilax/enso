@@ -167,7 +167,7 @@ import { onSplideMove } from "./preventive.js";
 	function scrollLockInit(splide, section) {
 		const html = document.querySelector("html");
 		const sectionElement = document.querySelector(section);
-		const splideElement = sectionElement.querySelector(".splide");
+		const focusElement = sectionElement.querySelector(".focus_element");
 
 		let isScrollLocked = false;
 		let lastScrollTime = 0; // Время последнего скролла
@@ -176,7 +176,7 @@ import { onSplideMove } from "./preventive.js";
 
 		// Функция проверки, находится ли центр блока в центре экрана
 		function isCenterInView() {
-			const rect = splideElement.getBoundingClientRect();
+			const rect = focusElement.getBoundingClientRect();
 			const blockCenter = rect.top + rect.height / 2;
 			const windowCenter = window.innerHeight / 2;
 			return Math.abs(blockCenter - windowCenter) < 200; // Допустимая погрешность (50px)
@@ -185,7 +185,7 @@ import { onSplideMove } from "./preventive.js";
 		// Функция для плавной прокрутки к центру блока
 		function scrollToBlockCenter() {
 			// Получаем координаты блока относительно документа
-			const blockRect = splideElement.getBoundingClientRect();
+			const blockRect = focusElement.getBoundingClientRect();
 			const blockTop = blockRect.top + window.scrollY;
 			const blockHeight = blockRect.height;
 			// Вычисляем позицию для скролла (центр блока - половина высоты окна)
@@ -285,11 +285,6 @@ import { onSplideMove } from "./preventive.js";
 			if (clickedTape.classList.contains("yellow")) {
 				pyramidSplide.go(5)
 			}
-		})
-
-	document.querySelector(".preventive")
-		?.addEventListener("click", (e) => {
-
 		})
 
 	scrollLockInit(pyramidSplide, ".pyramid.mobile",)

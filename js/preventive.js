@@ -1,3 +1,7 @@
+/*
+Этот файл для присвоения классов частям svg изображения, для выделения цветом
+*/
+
 const preventive = document.querySelector(".preventive");
 const bigCircles = preventive.querySelectorAll(".big .circle");
 const bigWaves = preventive.querySelectorAll(".big .wave");
