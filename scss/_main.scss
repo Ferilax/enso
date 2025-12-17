@@ -3856,6 +3856,20 @@
 	margin-top: 72px;
 	color: var(--dark);
 
+	&.animation-active {
+		.image {
+			flex-shrink: 0;
+		}
+
+		.desk-content {
+			flex-shrink: 0;
+		}
+
+		button {
+			pointer-events: none;
+		}
+	}
+
 	.head {
 		display: flex;
 		align-items: center;
@@ -3877,6 +3891,8 @@
 		display: flex;
 		gap: 14px;
 	}
+
+
 
 	.slide {
 		overflow: hidden;
@@ -3911,6 +3927,11 @@
 		&.active {
 			flex: 1 1 0;
 			padding: 40px 60px 60px;
+
+		}
+
+		&.animation-active {
+			background: #000;
 		}
 	}
 

@@ -30,4 +30,21 @@
 				.classList.add("active")
 		}
 	})
+
+	const section = document.querySelector(".dry-collection")
+	const allSlides = section.querySelectorAll(".slide")
+
+	section.addEventListener("transitionrun", (e) => {
+		const checkStructure = e.target.closest(".check-structure")
+
+		if (!checkStructure) {
+			section.classList.add("animation-active");
+		}
+	})
+	section.addEventListener("transitionend", (e) => {
+		const checkStructure = e.target.closest(".check-structure")
+		if (!checkStructure) {
+			section.classList.remove("animation-active");
+		}
+	});
 }())
