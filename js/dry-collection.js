@@ -35,15 +35,15 @@
 	const allSlides = section.querySelectorAll(".slide")
 
 	section.addEventListener("transitionrun", (e) => {
-		const checkStructure = e.target.closest(".check-structure")
+		const slide = e.target.classList.contains("slide")
 
-		if (!checkStructure) {
+		if (slide) {
 			section.classList.add("animation-active");
 		}
 	})
 	section.addEventListener("transitionend", (e) => {
-		const checkStructure = e.target.closest(".check-structure")
-		if (!checkStructure) {
+		const slide = e.target.classList.contains("slide")
+		if (slide) {
 			section.classList.remove("animation-active");
 		}
 	});

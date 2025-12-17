@@ -3857,11 +3857,10 @@
 	color: var(--dark);
 
 	&.animation-active {
-		.image {
-			flex-shrink: 0;
-		}
 
-		.desk-content {
+		.left-and-right,
+		.desk-content,
+		.image {
 			flex-shrink: 0;
 		}
 
